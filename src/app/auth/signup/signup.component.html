@@ -1,0 +1,144 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signup my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up</h5>
+            <form
+              class="form-signup"
+              [formGroup]="signupForm"
+              (ngSubmit)="signup()"
+            >
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="inputName"
+                  class="form-control"
+                  placeholder="Name"
+                  [formControl]="nameControl"
+                  [ngClass]="{
+                    'is-invalid': nameControl.dirty && nameControl.invalid
+                  }"
+                />
+                <label for="inputName">Name</label>
+                <div class="invalid-feedback">
+                  Name is mandatory
+                </div>
+              </div>
+  
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="inputSurname"
+                  class="form-control"
+                  placeholder="Surname"
+                  [formControl]="surnameControl"
+                  [ngClass]="{
+                    'is-invalid': surnameControl.dirty && surnameControl.invalid
+                  }"
+                />
+                <label for="inputSurname">Surname</label>
+                <div class="invalid-feedback">
+                  Surname is mandatory
+                </div>
+              </div>
+  
+              <div class="form-label-group">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  [formControl]="genderControl"
+                />
+                <span>Male</span>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  [formControl]="genderControl"
+                />
+                <span>Female</span>
+              </div>
+  
+              <div class="form-label-group">
+                <input
+                  type="email"
+                  id="inputEmail"
+                  class="form-control"
+                  placeholder="Email address"
+                  [formControl]="emailControl"
+                  [ngClass]="{
+                    'is-invalid': emailControl.dirty && emailControl.invalid
+                  }"
+                />
+                <label for="inputEmail">Email address</label>
+                <div class="invalid-feedback">
+                  <span *ngIf="emailControl.hasError('required')">
+                    Email is mandatory
+                  </span>
+                  <span *ngIf="emailControl.hasError('email')">
+                    Please introduce a valid email
+                  </span>
+                </div>
+              </div>
+  
+              <div class="form-label-group">
+                <input
+                  type="password"
+                  id="inputPassword"
+                  class="form-control"
+                  placeholder="Password"
+                  [formControl]="passwordControl"
+                  [ngClass]="{
+                    'is-invalid': passwordControl.dirty && passwordControl.invalid
+                  }"
+                />
+                <label for="inputPassword">Password</label>
+                <div class="invalid-feedback">
+                  <span *ngIf="passwordControl.hasError('required')">
+                    Password is mandatory
+                  </span>
+                  <span *ngIf="passwordControl.hasError('invalidPassword')">
+                    Password must contain a letter and a digit
+                  </span>
+                </div>
+              </div>
+  
+              <div class="form-label-group">
+                <input
+                  type="date"
+                  id="inputDate"
+                  class="form-control"
+                  placeholder="Birth date"
+                  [formControl]="birthControl"
+                  [ngClass]="{
+                    'is-invalid': birthControl.dirty && birthControl.invalid
+                  }"
+                />
+                <label for="inputDate">Birth date</label>
+                <div class="invalid-feedback">
+                  Introduce a valid date
+                </div>
+              </div>
+  
+              <button
+                class="btn btn-lg btn-primary btn-block text-uppercase"
+                type="submit"
+                [disabled]="signupForm.invalid"
+              >
+                Sign up
+              </button>
+              <hr class="my-4" />
+              <button
+                class="btn btn-lg btn-cancel btn-block text-uppercase"
+                (click)="cancel()"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

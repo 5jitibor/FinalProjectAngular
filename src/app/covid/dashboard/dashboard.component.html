@@ -1,0 +1,52 @@
+<div class="container" *ngIf="covidItem">
+    <hr />
+    <div>
+      <span>Last change: {{ covidItem.lastChange | date }}</span>
+    </div>
+    <div>
+      <span>Last update: {{ covidItem.lastUpdate | date }}</span>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Confirmed</h5>
+            <p class="card-text">
+              {{ covidItem.confirmed | number  }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Recovered</h5>
+            <p class="card-text">
+              {{ covidItem.recovered | number }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Critical</h5>
+            <p class="card-text">
+              {{ covidItem.critical | number  }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Deaths</h5>
+            <p class="card-text">
+              {{ covidItem.deaths | number  }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

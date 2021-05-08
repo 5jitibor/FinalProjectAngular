@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li
+            class="nav-item"
+            [ngClass]="{ active: isActive('/covid/dashboard') }"
+          >
+            <a class="nav-link" (click)="dashboard()">Dashboard</a>
+          </li>
+          <li
+            class="nav-item"
+            [ngClass]="{ active: isActive('/covid/world-map') }"
+          >
+            <a class="nav-link" (click)="map()">Map</a>
+          </li>
+          <li
+            class="nav-item"
+            [ngClass]="{ active: isActive('/covid/world-list') }"
+          >
+            <a class="nav-link" (click)="list()">List</a>
+          </li>
+          <li class="nav-item" [ngClass]="{ active: isActive('/covid/live') }">
+            <a class="nav-link" (click)="donut()">Live</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
